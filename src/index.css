@@ -1,0 +1,9 @@
+/* Directives Tailwind CSS pour importer les styles de base */
+@tailwind base;
+
+/* Définit les styles réutilisables pour les composants personnalisés */
+@tailwind components;
+
+/* Importe toutes les classes utilitaires Tailwind (flex, bg-, text-, etc.) */
+@tailwind utilities;
+
