@@ -48,7 +48,6 @@ Je suis actuellement à la recherche d’un **stage en développement (Hiver 202
 - 🔗 Liens GitHub par projet
 - 📄 Téléchargement du CV
 - 📬 Formulaire de contact fonctionnel
-- 📱 Design responsive (mobile / desktop)
 
 ---
 
@@ -66,3 +65,4 @@ npm install
 
 # Lancer le serveur de développement
 npm run dev
+
