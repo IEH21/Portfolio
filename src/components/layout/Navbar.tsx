@@ -20,10 +20,10 @@ export default function Navbar() {
   return (
     // Navbar fixe avec support complet light/dark mode + flou
     <header className="fixed top-0 left-0 w-full z-50
-                       bg-white/60 dark:bg-darkbg/60
+                       bg-bg/70 dark:bg-darkbg/70
                        backdrop-blur-md
                        border-b border-black/5 dark:border-white/5">
-      <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <nav className="max-w-6xl mx-auto flex flex-wrap items-center justify-between px-6 py-4 gap-y-2">
         {/* Logo fixe */}
         <a href="#home" className="font-semibold text-sm text-accent dark:text-accentDark">
           Imane
@@ -38,7 +38,7 @@ export default function Navbar() {
                 className={
                   active === link.id
                     ? "text-accent"
-                    : "text-muted dark:text-gray-400 hover:text-accent transition"
+                    : "text-muted dark:text-darkfg/70 hover:text-accent transition"
                 }
               >
                 {link.label}
@@ -48,20 +48,31 @@ export default function Navbar() {
         </ul>
 
         {/* Toggle langue + thème (EN/FR + ☀️🌙) */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 shrink-0">
           {/* Toggle langue */}
           <button
             onClick={toggleLang}
-            className="text-xs font-medium px-2 py-1 rounded-md
-                      bg-white/60 dark:bg-black/40
-                      text-fg dark:text-darkfg
-                      hover:text-accent transition"
+            className="text-xs px-2 py-1 rounded-md
+                     text-muted hover:text-accent transition"
           >
             {lang === "en" ? "FR" : "EN"}
           </button>
 
           {/* Theme toggle */}
-          <ThemeToggle />
+          <div className="hidden md:block">
+            <ThemeToggle />
+          </div>
+
+          {/* Theme toggle MOBILE (icône seulement) */}
+          <button
+            onClick={() =>
+              document.documentElement.classList.toggle("dark")
+            }
+            className="md:hidden text-lg"
+            aria-label="Toggle theme"
+          >
+            🌙
+          </button>
         </div>
       </nav>
     </header>

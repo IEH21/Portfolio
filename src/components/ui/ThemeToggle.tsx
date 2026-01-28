@@ -15,6 +15,7 @@ export default function ThemeToggle() {
     <button
       onClick={() => setDark(!dark)}
       className="
+        relative z-50
         text-xs px-3 py-1 rounded-full
         border border-black/10 dark:border-white/10
         text-muted dark:text-gray-300
