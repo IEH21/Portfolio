@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { Project } from "../../data/projects"
 import { useLanguage } from "../../context/LanguageContext"
-import ProjectModal from "./ProjectModal"
 
 type Props = {
   project: Project
@@ -121,14 +120,6 @@ export default function ProjectCard({ project }: Props) {
           </a>
         </div>
       </div>
-
-      {/* ===== MODAL ===== */}
-      {open && (
-        <ProjectModal
-          project={project}
-          onClose={() => setOpen(false)}
-        />
-      )}
     </>
   )
 }
